@@ -12,9 +12,17 @@ pub struct Model {
 
 impl Model {
     pub fn new() -> Model {
-        Model {
+        let mut model = Model {
             users: HashMap::new()
-        }
+        };
+
+        model.add_user(user::User::new("1000".to_string()));
+
+        model
+    }
+
+    fn add_user(&mut self, user: user::User) {
+        self.users.insert(user.id.clone(), user);
     }
 }
 
@@ -24,7 +32,11 @@ impl juniper::Context for Model {}
 pub struct QueryRoot;
 
 graphql_object!(QueryRoot: Model |&self| {
-    description: "Root object"
+    description: "Root object",
+
+    field user(&executor, id: String as "id of the user") -> Option<&user::User> {
+        executor.context().users.get(&id)
+    }
 });
 
 pub type Schema = juniper::RootNode<'static, QueryRoot, juniper::EmptyMutation<Model>>;
