@@ -1,6 +1,9 @@
 [package]
 name = "rust-programming-ladder-backend"
 version = "0.1.0"
-authors = ["Audun Halland <audun.halland@gmail.com>"]
+authors = ["Audun Halland <audun.halland@gmail.com>", "Sverre Johann Bjørke"]
 
 [dependencies]
+rocket = "0.3.3"
+rocket_codegen = "0.3.3"
+
