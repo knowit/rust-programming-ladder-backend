@@ -1,9 +1,13 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
 
-mod api;
-
 extern crate rocket;
+
+#[macro_use]
+extern crate juniper;
+
+mod api;
+mod model;
 
 fn main() {
     rocket::ignite()
