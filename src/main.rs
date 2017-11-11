@@ -8,6 +8,13 @@ fn hello() -> String {
     format!("Hello, world")
 }
 
+#[get("/<name>")]
+fn hello_name(name: String) -> String {
+    format!("Hello, {}", name)
+}
+
 fn main() {
-    rocket::ignite().mount("", routes![hello]).launch();
+    rocket::ignite()
+        .mount("/", routes![hello, hello_name])
+        .launch();
 }
