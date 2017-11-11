@@ -13,6 +13,6 @@ mod model;
 
 fn main() {
     rocket::ignite()
-        .mount("/", routes![api::graphiql])
+        .mount("/", routes![api::graphiql, api::get_graphql_handler])
         .launch();
 }

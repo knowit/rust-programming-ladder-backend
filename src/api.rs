@@ -16,12 +16,4 @@ fn get_graphql_handler(
     schema: rocket::State<model::Schema>
 ) -> juniper_rocket::GraphQLResponse {
     request.execute(&schema, &context)
-    //request.execute()
 }
-
-/*
-#[get("/")]
-fn index() -> &'static str {
-    "Hello, world!"
-}
-*/
