@@ -7,7 +7,7 @@ use std::collections::HashMap;
 
 pub struct QueryRoot;
 
-// Our model/database
+// Our model/in-memory database
 pub struct Model {
     users: HashMap<String, user::User>
 }
