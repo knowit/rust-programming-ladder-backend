@@ -1,7 +1,7 @@
 [package]
 name = "rust-programming-ladder-backend"
 version = "0.1.0"
-authors = ["Audun Halland <audun.halland@gmail.com>", "Sverre Johann Bjørke"]
+authors = ["Audun Halland <audun.halland@gmail.com>", "Sverre Johann Bjørke <sverrejb@gmail.com>"]
 
 [dependencies]
 juniper = { git = "https://github.com/graphql-rust/juniper" }

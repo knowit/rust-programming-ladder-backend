@@ -13,9 +13,9 @@ New programming-ladder backend written in Rust.
 
 ## Installation	
 
-⚙️ Install rust: `curl https://sh.rustup.rs -sSf | sh` 
-⛓ Install nigtly toolchain: `rustup toolchain install nightly` 
-📂 Clone project and `cd` into project directory 
- 🌃 Set nightyl toolchain as override for directory: `rustup override set nightly`
-🚀 Launch app with `cargo run` 
-✅ Visit `localhost:8000` to confirm that the app is running 
+* Install rust: `curl https://sh.rustup.rs -sSf | sh`
+* Install nigtly toolchain: `rustup toolchain install nightly`
+* Clone project and `cd` into project directory
+* Set nightyl toolchain as override for directory: `rustup override set nightly`
+* Launch app with `cargo run`
+* Visit `localhost:8000` to confirm that the app is running
