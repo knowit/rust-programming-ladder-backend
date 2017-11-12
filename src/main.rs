@@ -3,18 +3,25 @@
 
 extern crate rocket;
 
-#[get("/")]
-fn hello() -> String {
-    format!("Hello, world")
-}
+#[macro_use]
+extern crate juniper;
 
-#[get("/<name>")]
-fn hello_name(name: String) -> String {
-    format!("Hello, {}", name)
-}
+extern crate juniper_rocket;
+
+mod api;
+mod model;
 
 fn main() {
     rocket::ignite()
-        .mount("/", routes![hello, hello_name])
+        .manage(model::Model::new())
+        .manage(model::Schema::new(
+            model::QueryRoot {},
+            juniper::EmptyMutation::<model::Model>::new(),
+        ))
+        .mount("/", routes![
+            api::graphiql,
+            api::get_graphql_handler,
+            api::post_graphql_handler,
+        ])
         .launch();
 }
