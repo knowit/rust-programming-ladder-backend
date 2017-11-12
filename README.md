@@ -26,3 +26,7 @@ The current state of Rust for the Web is that everything is extremely bleeding e
 Currently, a typical Rust web server is synchronous, which is not a scalable architecture for a web server that is running on system threads. Therefore, the most recent version of https://github.com/hyperium/hyper HTTP library (0.11) has been rewritten to be based on https://github.com/tokio-rs/tokio, Rust's async IO library (link: http://seanmonstar.com/post/161786147642/hyper-v011). Libraries like `rocket` and `juniper`, which are completely synchronous in their design, may become outdated or API may change significantly in the near future.
 
 We need to keep this in mind when developing this backend.
+
+#### Issues in various dependency libraries discussing the introduction of async
+* https://github.com/SergioBenitez/Rocket/issues/17
+* https://github.com/graphql-rust/juniper/issues/2
